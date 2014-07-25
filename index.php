@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
@@ -13,18 +6,12 @@
     <title>TagPro Stats</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    <link rel="stylesheet" href="css/normalize.css?<?php echo time(); ?>">
-    <link rel="stylesheet" href="css/main.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body onload="firstRun();">
-<!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
+
 
 <div class="containers">
     <table style="width: 100%; font-weight: bold;">
@@ -38,7 +25,7 @@
     </table>
 </div>
 
-<div style="margin: 0px 1% 0px 1%;">
+<div style="margin: 0 1% 0 1%;">
 <table>
 <tr>
 <td class="main">
@@ -164,7 +151,7 @@
                             <tr>
                                 <td style="padding-left: 2px; padding-right: 2px;"><input type="checkbox" id="mltpCheck"
                                                                                           value="1"/></td>
-                                <td style="text-align: center; width: 50px;">Only MLTP Registered</td>
+                                <td style="text-align: center; width: 50;">Only MLTP Registered</td>
                             </tr>
                         </table>
                     </div>
@@ -219,47 +206,34 @@
             style="font-weight: bold; color: #00FF00; text-align: center; background-color: #420f59; padding-top: 5px; padding-bottom: 5px;">
             New Stat - Kept Flags
         </div>
-        <div style="font-size: 13px; padding: 5px 5px 0px 5px;">
+        <div style="font-size: 13px; padding: 5px 5px 0 5px;">
             Ever wonder how many times the clock has run out while you were still holding the flag? Check out the
             <a href="http:///www.tagpro-stats.com/#range=all&stat=keptflags&page=0&game=100&row=100&order=desc&active=0">kept
                 flags</a>
             stat.
         </div>
-        <div style="font-size: 14px; margin-top: 10px; margin-bottom: 5px; text-align: center; font-weight: bold;">
+        <div style="font-size: 14px; margin-top: 10; margin-bottom: 5px; text-align: center; font-weight: bold;">
             Kept Flags = Grabs - (Captures + Drops)
         </div>
-        <div style="font-size: 13px; padding: 5px 5px 0px 5px; text-align: center;">
+        <div style="font-size: 13px; padding: 5px 5px 0 5px; text-align: center;">
             <a href="http://www.reddit.com/message/compose/?to=Some_Ball">Send me</a> your new stat suggestions.
         </div>
     </div>
-
-
-    <div style="text-align: center; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- TagPro LeaderBoard -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:336px;height:280px; padding: 0 0 0 0 margin: 0 0 0 0;"
-             data-ad-client="ca-pub-3578354369996923" data-ad-slot="2213918706"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
 
     <div class="containers">
         <div
             style="font-weight: bold; font-size: 16px; text-align: center; background-color: #420f59; padding-top: 3px;">
             Welcome to TagPro-Stats.com
         </div>
-        <div style="font-size: 13px; padding: 5px 5px 0px 5px;">
+        <div style="font-size: 13px; padding: 5px 5px 0 5px;">
             Use the form below to add yourself to the leaderboards.
             Once added, your stats will be updated once every 4 hours.
         </div>
-        <div style="font-size: 13px; padding: 5px 5px 0px 5px;">
+        <div style="font-size: 13px; padding: 5px 5px 0 5px;">
             Comments, questions, or suggestions? <a href="http://www.reddit.com/message/compose/?to=Some_Ball">contact
                 me here</a>.
         </div>
-        <div style="font-size: 13px; padding: 10px 5px 0px 5px; text-align: center;">
+        <div style="font-size: 13px; padding: 10 5px 0 5px; text-align: center;">
             <div id="RegistrationCount">
             </div>
         </div>
@@ -284,7 +258,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" style="font-size: 12px; padding-top: 10px;">
+                <td colspan="2" style="font-size: 12px; padding-top: 10;">
                     What's your <b>Profile ID</b>? It is the hex value that appears at the end of the url on your
                     profile page.
                     Just login to any server, click <b>Profile</b>, and copy/paste the value into the box above.
@@ -300,10 +274,10 @@
             style="font-weight: bold; font-size: 16px; text-align: center; background-color: #420f59; padding-top: 3px;">
             Database Backup File
         </div>
-        <div style="font-size: 13px; padding: 5px 5px 0px 5px;">
+        <div style="font-size: 13px; padding: 5px 5px 0 5px;">
             For those who want to monkey around with the stats themselves.
         </div>
-        <div style="font-size: 14px; margin-top: 10px; margin-bottom: 10px; text-align: center;">
+        <div style="font-size: 14px; margin-top: 10; margin-bottom: 10; text-align: center;">
             <a href="tagpro_stats_backup.sql.gz">tagpro_stats_backup.sql.gz</a> -
             <?php
             echo number_format(filesize("tagpro_stats_backup.sql.gz") / 1048576, 1) . ' MB - ';
@@ -319,22 +293,6 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-<script src="js/main.js?<?php echo time(); ?>"></script>
-
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-44822081-1', 'tagpro-stats.com');
-    ga('send', 'pageview');
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
