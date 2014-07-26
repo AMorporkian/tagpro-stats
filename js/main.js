@@ -1,5 +1,9 @@
 $.ajaxSetup({cache: false});//turn off ajax caching
 
+$(document).ready(function() {
+    firstRun();
+});
+
 function firstRun() {
     var Q = function () {
         var query_string = {};
