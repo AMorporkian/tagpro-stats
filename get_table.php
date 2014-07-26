@@ -81,7 +81,7 @@ $table_string = $record_string . " r on r.bi_user_id = p.bi_user_id join " . $st
 /* SET STAT PART OF QUERY HERE*/
 switch ($stat) {
     case "winpercent":
-        $select_string = "select p.vc_server_name, r.dt_last_update,  r.vc_name, (i_wins/i_games) as stat,  if(i_games < 50, '*', '') as asterisk ";
+        $select_string = "select p.vc_server_name, r.dt_last_update,  r.vc_name, (i_wins/i_games)*100 as stat,  if(i_games < 50, '*', '') as asterisk ";
         $order_string = " order by (i_wins/i_games) " . $order;
         $stat_header = "Win %";
         break;
@@ -355,14 +355,14 @@ if ($range != null && $stat != null) {
     $result = mysqli_query($con, $sql);
 
     $rank = 1 + $start;
-    echo "<table class='leaderTable'>";
+    echo "<table class='leaderTable table'>";
     echo "<tr><th>Rank</th><th>Last Updated</th><th>Name</th><th>" . $stat_header . "</th>";
     while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
         echo "<tr><td class='leaderTable'>" . $rank
             . "</td><td class='leaderTable'>" . $row['dt_last_update']
             . "</td><td class='leaderTable'><a href='http://tagpro-origin.koalabeast.com/profile/" . $row['vc_profile_string'] . "'>" . $row['vc_name'] . "</a>" . $row['asterisk']
             . " <a href='profile.php?userid=" . $row['bi_user_id'] . "'>"
-            . "<img src='http://tagpro-stats.com/img/blue_flag.gif' onmouseover='this.src = \"http://tagpro-stats.com/img/red_flag.gif\";' onmouseout='this.src = \"http://tagpro-stats.com/img/blue_flag.gif\";'/></a>"
+            . "<img class='pull-right' src='http://tagpro-stats.com/img/blue_flag.gif' onmouseover='this.src = \"http://tagpro-stats.com/img/red_flag.gif\";' onmouseout='this.src = \"http://tagpro-stats.com/img/blue_flag.gif\";'/></a>"
             . "</td><td class='leaderTable'>" . $row['stat'] . "</td></tr>";
         $rank++;
     }

@@ -1,0 +1,148 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <table class="table">
+            <tr>
+                <th class="header" colspan=8>The TagPro Leaderboard</th>
+            </tr>
+            <tr>
+                <td>Timeframe</td>
+                <td>Last played</td>
+                <td>Games</td>
+                <td>Sort by</td>
+                <td>Row count</td>
+                <td>Order</td>
+            </tr>
+            <tr>
+                <td>
+                    <select id="SelectRange" class="leaderBoardSelect">
+                        <option value="all">All</option>
+                        <option value="month">Monthly</option>
+                        <option value="week">Weekly</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="SelectActive">
+                        <option value="0" selected="selected">Anytime</option>
+                        <option value="1">-1 Day</option>
+                        <option value="3">-3 Days</option>
+                        <option value="7">-7 Days</option>
+                        <option value="30">-30 Days</option>
+                        <option value="180">-180 Days</option>
+                        <option value="365">-365 Days</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="SelectGame">
+                        <option value="0">> 0</option>
+                        <option value="10">> 10</option>
+                        <option value="50">> 50</option>
+                        <option value="100" selected="selected">> 100</option>
+                        <option value="200">> 200</option>
+                        <option value="500">> 500</option>
+                        <option value="1000">> 1000</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="SelectStat">
+                        <optgroup label="Win/Loss">
+                            <option value="winpercent">Win %</option>
+                            <option value="wins">Wins</option>
+                            <option value="losses">Losses</option>
+                            <option value="games">Games</option>
+                            <option value="winpercentnodcs">Win % (DCs Excluded)</option>
+                        </optgroup>
+                        <optgroup label="Caps/Returns/Tags">
+                            <option value="tags">Tags</option>
+                            <option value="taggame">Tags/Game</option>
+                            <option value="taghour">Tags/Hour</option>
+                            <option value="returns">Returns</option>
+                            <option value="returngame">Returns/Game</option>
+                            <option value="returnhour">Returns/Hour</option>
+                            <option value="captures">Captures</option>
+                            <option value="capgame">Captures/Game</option>
+                            <option value="caphour">Captures/Hour</option>
+                        </optgroup>
+                        <optgroup label="Grabs/Drops/Pops">
+                            <option value="grabs">Grabs</option>
+                            <option value="grabgame">Grabs/Game</option>
+                            <option value="grabhour">Grabs/Hour</option>
+                            <option value="drops">Drops</option>
+                            <option value="dropgame">Drops/Game</option>
+                            <option value="drophour">Drops/Hour</option>
+                            <option value="popped">Popped</option>
+                            <option value="popgame">Popped/Game</option>
+                            <option value="pophour">Popped/Hour</option>
+                        </optgroup>
+                        <optgroup label="Hold/Prevent/Support">
+                            <option value="hold">Hold</option>
+                            <option value="holdgame">Hold/Game</option>
+                            <option value="holdhour">Hold/Hour</option>
+                            <option value="prevent">Prevent</option>
+                            <option value="preventgame">Prevent/Game</option>
+                            <option value="preventhour">Prevent/Hour</option>
+                            <option value="support">Support</option>
+                            <option value="supportgame">Support/Game</option>
+                            <option value="supporthour">Support/Hour</option>
+                        </optgroup>
+                        <optgroup label="Miscellaneous">
+                            <option value="capgrab">Captures/Grab</option>
+                            <option value="tagpop">Tag/Pop Ratio</option>
+                            <option value="holdgrab">Hold/Grab</option>
+                            <option value="nrtags">Non-Return Tags</option>
+                            <option value="nrtagsgame">Non-Return Tags/Game</option>
+                            <option value="nrtagshour">Non-Return Tags/Hour</option>
+                            <option value="keptflags">Kept Flags</option>
+                        </optgroup>
+                        <optgroup label="Points/Hours/DCs">
+                            <option value="points">Rank Points</option>
+                            <option value="pointgame">Rank Points/Game</option>
+                            <option value="pointhour">Rank Points/Hour</option>
+                            <option value="hours">Hours</option>
+                            <option value="hourgame">Minutes/Game</option>
+                            <option value="dcs">Disconnects</option>
+                        </optgroup>
+                    </select>
+                </td>
+                <td>
+                    <select id="SelectRow">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100" selected="selected">100</option>
+                        <option value="250">250</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="SelectOrder">
+                        <option value="desc">Desc</option>
+                        <option value="asc">Asc</option>
+                    </select>
+                </td>
+                <td>
+                    <div style="border: 1px solid black; font-size: 11px;">
+                        <table>
+                            <tr>
+                                <td style="padding-left: 2px; padding-right: 2px;"><input type="checkbox"
+                                                                                          id="mltpCheck"
+                                                                                          value="1"/></td>
+                                <td style="text-align: center; width: 50;">Only MLTP Registered</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <button style="width: 100%;"
+                            onclick="getLeaderboard(0, '#LeaderBoard', $('#SelectRange').val(), $('#SelectGame').val(), $('#SelectStat').val(), $('#SelectRow').val(), $('#SelectOrder').val(), $('#SelectActive').val() )">
+                        Generate New Leaderboard
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-body" id="LeaderBoard">
+        <img src="../img/ajax-loader.gif">
+    </div>
+
+</div>

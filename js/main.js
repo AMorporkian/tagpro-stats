@@ -10,7 +10,8 @@ function firstRun() {
             if (typeof query_string[pair[0]] === "undefined") {
                 query_string[pair[0]] = pair[1];
             } else if (typeof query_string[pair[0]] === "string") {
-                query_string[pair[0]] = [ query_string[pair[0]], pair[1] ];
+                var arr = [ query_string[pair[0]], pair[1] ];
+                query_string[pair[0]] = arr;
             } else {
                 query_string[pair[0]].push(pair[1]);
             }
@@ -63,7 +64,8 @@ function submitProfile() {
 
 function getLeaderboard(page, board, range, game, stat, row, order, active) {
     $(board).html("<img src='img/ajax-loader.gif'>");
-    var mltp = document.getElementById('mltpCheck').checked;
+    if (document.getElementById('mltpCheck'))
+    {var mltp = document.getElementById('mltpCheck').checked;
     $.ajax({
         type: "GET",
         url: 'get_table.php',
@@ -73,6 +75,7 @@ function getLeaderboard(page, board, range, game, stat, row, order, active) {
         }
     });
     window.location.hash = 'range=' + range + '&stat=' + stat + '&page=' + page + '&game=' + game + "&row=" + row + "&order=" + order + "&active=" + active;
+    }
 
 }
 

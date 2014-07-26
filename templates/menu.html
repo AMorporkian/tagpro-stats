@@ -1,0 +1,27 @@
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">TagPro Stats</a>
+    </div>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="http://tagpro.koalabeast.com/">Play TagPro</a></li>
+            <li><a href="http://www.reddit.com/r/tagpro">Discuss TagPro</a></li>
+            <li><a href="http://www.twitch.tv/tagprotv">Watch TagPro</a></li>
+
+        </ul>
+        <form role="search" class="navbar-form navbar-right">
+            <div class="form-group">
+                <input type="text" placeholder="Search for a player" class="form-control" onkeyup="populateAutoComplete()" id="autocompleteTextBox">
+                <div id="autocomplete-div" class="list-group"></div>
+            </div>
+        </form>
+    </div>
+</nav>
