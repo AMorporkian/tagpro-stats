@@ -2,6 +2,16 @@ $.ajaxSetup({cache: false});//turn off ajax caching
 
 $(document).ready(function() {
     firstRun();
+    $("#refresh-btn").on("click", function() {
+        getLeaderboard(0,
+            '#LeaderBoard',
+            $('#SelectRange').val(),
+            $('#SelectGame').val(),
+            $('#SelectStat').val(),
+            $('#SelectRow').val(),
+            $('#SelectOrder').val(),
+            $('#SelectActive').val());
+    });
 });
 
 function firstRun() {
