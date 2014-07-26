@@ -1,20 +1,14 @@
 $.ajaxSetup({cache: false});//turn off ajax caching
 
+var currentPage = 0;
 $(document).ready(function() {
     firstRun();
-    $("#refresh-btn").on("click", function() {
-        getLeaderboard(0,
-            '#LeaderBoard',
-            $('#SelectRange').val(),
-            $('#SelectGame').val(),
-            $('#SelectStat').val(),
-            $('#SelectRow').val(),
-            $('#SelectOrder').val(),
-            $('#SelectActive').val());
-    });
+    $("#refresh-btn").on("click", function() { getLeaderboard(currentPage); });
+    $(".leaderboard-controls select").on("change", function() { getLeaderboard(0); });
 });
 
 function firstRun() {
+    /* Get query from URL */
     var Q = function () {
         var query_string = {};
         var query = window.location.hash.substring(1);
@@ -33,15 +27,18 @@ function firstRun() {
         return query_string;
     }();
     if (Q.range != undefined && Q.stat != undefined && Q.page != undefined && Q.game != undefined && Q.row != undefined && Q.order != undefined) {
+        if(Q.page >= 0) {
+            currentPage = Q.page;
+        }
         $('#SelectRange').val(Q.range);
         $('#SelectStat').val(Q.stat);
         $('#SelectGame').val(Q.game);
         $('#SelectRow').val(Q.row);
         $('#SelectOrder').val(Q.order);
         $('#SelectActive').val(Q.active);
-        getLeaderboard(Q.page, '#LeaderBoard', Q.range, Q.game, Q.stat, Q.row, Q.order, Q.active);
+        getLeaderboard(Q.page);
     } else {
-        getLeaderboard(0, '#LeaderBoard', $('#SelectRange').val(), $('#SelectGame').val(), $('#SelectStat').val(), $('#SelectRow').val(), $('#SelectOrder').val(), $('#SelectActive').val());
+        getLeaderboard(0);
     }
     getUserCount();
     getStatLeaders("month", "#MonthlyStatLeaders");
@@ -76,7 +73,17 @@ function submitProfile() {
     }
 }
 
-function getLeaderboard(page, board, range, game, stat, row, order, active) {
+function getLeaderboard(page) {
+    var board = "#LeaderBoard";
+    var range = $('#SelectRange').val();
+    var game = $('#SelectGame').val();
+    var stat = $('#SelectStat').val();
+    var row = $('#SelectRow').val();
+    var order = $('#SelectOrder').val();
+    var active = $('#SelectActive').val();
+
+    //TODO: validate values here
+
     $(board).html("<img src='img/ajax-loader.gif'>");
     var mltp = 0;
     $.ajax({
@@ -88,8 +95,6 @@ function getLeaderboard(page, board, range, game, stat, row, order, active) {
         }
     });
     window.location.hash = 'range=' + range + '&stat=' + stat + '&page=' + page + '&game=' + game + "&row=" + row + "&order=" + order + "&active=" + active;
-
-
 }
 
 function getUserCount() {
