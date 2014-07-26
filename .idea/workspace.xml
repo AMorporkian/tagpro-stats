@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9358be7-a7e3-4c55-bd79-fa58d65a6a30" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/humanize.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/get_leaders.php" afterPath="$PROJECT_DIR$/get_leaders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/get_table.php" afterPath="$PROJECT_DIR$/get_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/profile.html" afterPath="$PROJECT_DIR$/templates/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/selfaddition.html" afterPath="$PROJECT_DIR$/templates/selfaddition.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/site.css" afterPath="$PROJECT_DIR$/css/site.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tagpro-stats-php.iws" />
@@ -73,7 +67,7 @@
           <file leaf-file-name="leaderboard.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/leaderboard.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="58" column="22" selection-start="2844" selection-end="2844" vertical-scroll-proportion="-33.75" vertical-offset="60" max-vertical-offset="2445">
+                <state line="57" column="22" selection-start="2663" selection-end="2663" vertical-scroll-proportion="-33.75" vertical-offset="45" max-vertical-offset="2445">
                   <folding />
                 </state>
               </provider>
@@ -102,16 +96,16 @@
           <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="64" column="9" selection-start="2246" selection-end="2246" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="2265">
+                <state line="85" column="0" selection-start="2684" selection-end="2684" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2550">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="get_leaders.php" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="get_leaders.php" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/get_leaders.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="68" column="0" selection-start="3803" selection-end="3803" vertical-scroll-proportion="0.72677594" vertical-offset="621" max-vertical-offset="1230">
+                <state line="68" column="0" selection-start="3803" selection-end="3803" vertical-scroll-proportion="1.693989" vertical-offset="90" max-vertical-offset="1230">
                   <folding />
                 </state>
               </provider>
@@ -171,10 +165,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="100" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="915">
+                <state line="28" column="63" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.7291667" vertical-offset="0" max-vertical-offset="930">
                   <folding />
                 </state>
               </provider>
@@ -189,10 +183,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="humanize.php" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="humanize.php" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/humanize.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.050933786" vertical-offset="0" max-vertical-offset="589">
+                <state line="2" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="120">
                   <folding />
                 </state>
               </provider>
@@ -256,7 +250,6 @@
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/templates/leaderboard.html" />
         <option value="$PROJECT_DIR$/templates/search.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/selfaddition.html" />
         <option value="$PROJECT_DIR$/templates/profile.html" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -264,6 +257,7 @@
         <option value="$PROJECT_DIR$/css/site.css" />
         <option value="$PROJECT_DIR$/get_table.php" />
         <option value="$PROJECT_DIR$/get_leaders.php" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -812,13 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="100" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/selfaddition.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="68" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="555">
@@ -842,14 +829,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="9" selection-start="2246" selection-end="2246" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="2265">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/humanize.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="0.050933786" vertical-offset="0" max-vertical-offset="589">
+        <state line="85" column="0" selection-start="2684" selection-end="2684" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2550">
           <folding />
         </state>
       </provider>
@@ -863,7 +843,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/leaderboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="22" selection-start="2844" selection-end="2844" vertical-scroll-proportion="-33.75" vertical-offset="60" max-vertical-offset="2445">
+        <state line="57" column="22" selection-start="2663" selection-end="2663" vertical-scroll-proportion="-33.75" vertical-offset="45" max-vertical-offset="2445">
           <folding />
         </state>
       </provider>
@@ -900,7 +880,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/get_leaders.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="3803" selection-end="3803" vertical-scroll-proportion="0.72677594" vertical-offset="621" max-vertical-offset="1230">
+        <state line="68" column="0" selection-start="3803" selection-end="3803" vertical-scroll-proportion="1.693989" vertical-offset="90" max-vertical-offset="1230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/humanize.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="4" selection-end="4" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="63" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.7291667" vertical-offset="0" max-vertical-offset="930">
           <folding />
         </state>
       </provider>
