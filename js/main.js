@@ -1,14 +1,25 @@
 $.ajaxSetup({cache: false});//turn off ajax caching
 
 var currentPage = 0;
+var currentUrlHash;
 $(document).ready(function() {
-    firstRun();
-    $("#refresh-btn").on("click", function() { getLeaderboard(currentPage); });
-    $(".leaderboard-controls select").on("change", function() { getLeaderboard(0); });
+    $("#refresh-btn").on("click", function() { getLeaderboard(); });
+    $(".leaderboard-controls select").on("change", function() { currentPage = 0; getLeaderboard(); });
+    $("#LeaderBoard").on("click", ".prev-btn", function() { currentPage--; getLeaderboard(); });
+    $("#LeaderBoard").on("click", ".next-btn", function() { currentPage++; getLeaderboard(); });
+//    $("#permalink-btn").on("click", function() {
+//        $("#permalink-txt").text("http://tagpro-stats.com/" + currentUrlHash);
+//        $("#permalink-txt").attr("href", "/" + currentUrlHash);
+//        $("#permalink-txt").toggleClass("hidden");
+//    });
+    parseURL();
+    getUserCount();
+    getStatLeaders("month", "#MonthlyStatLeaders");
+    getStatLeaders("week", "#WeeklyStatLeaders");
+    getLeaderboard();
 });
 
-function firstRun() {
-    /* Get query from URL */
+function parseURL() {
     var Q = function () {
         var query_string = {};
         var query = window.location.hash.substring(1);
@@ -26,23 +37,29 @@ function firstRun() {
         }
         return query_string;
     }();
-    if (Q.range != undefined && Q.stat != undefined && Q.page != undefined && Q.game != undefined && Q.row != undefined && Q.order != undefined) {
-        if(Q.page >= 0) {
-            currentPage = Q.page;
-        }
+
+    // set anything that was in the url
+    if(Q.range != undefined) {
         $('#SelectRange').val(Q.range);
-        $('#SelectStat').val(Q.stat);
-        $('#SelectGame').val(Q.game);
-        $('#SelectRow').val(Q.row);
-        $('#SelectOrder').val(Q.order);
-        $('#SelectActive').val(Q.active);
-        getLeaderboard(Q.page);
-    } else {
-        getLeaderboard(0);
     }
-    getUserCount();
-    getStatLeaders("month", "#MonthlyStatLeaders");
-    getStatLeaders("week", "#WeeklyStatLeaders");
+    if(Q.stat != undefined) {
+        $('#SelectStat').val(Q.stat);
+    }
+    if(Q.game != undefined) {
+        $('#SelectGame').val(Q.game);
+    }
+    if(Q.row != undefined) {
+        $('#SelectRow').val(Q.row);
+    }
+    if(Q.order != undefined) {
+        $('#SelectOrder').val(Q.order);
+    }
+    if(Q.active != undefined) {
+        $('#SelectActive').val(Q.active);
+    }
+    if(Q.page >= 0) {
+        currentPage = Q.page;
+    }
 }
 
 function submitProfile() {
@@ -73,7 +90,8 @@ function submitProfile() {
     }
 }
 
-function getLeaderboard(page) {
+function getLeaderboard() {
+    var page = currentPage;
     var board = "#LeaderBoard";
     var range = $('#SelectRange').val();
     var game = $('#SelectGame').val();
@@ -94,7 +112,8 @@ function getLeaderboard(page) {
             $(board).html(data);
         }
     });
-    window.location.hash = 'range=' + range + '&stat=' + stat + '&page=' + page + '&game=' + game + "&row=" + row + "&order=" + order + "&active=" + active;
+    currentUrlHash = '#range=' + range + '&stat=' + stat + '&page=' + page + '&game=' + game + "&row=" + row + "&order=" + order + "&active=" + active;
+    $("#permalink-btn").attr("href", "/" + currentUrlHash);
 }
 
 function getUserCount() {

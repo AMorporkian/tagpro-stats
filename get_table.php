@@ -420,13 +420,13 @@ if ($range != null && $stat != null) {
     if ($actual_page == 1) {
         echo "<td> <button class=\"btn btn-default btn-sm pull-left\" disabled>Previous</button> </td>";
     } else {
-        echo "<td> <button class=\"btn btn-default btn-sm pull-left\" onclick='getLeaderboard(" . ($page - 1) . ", \"#LeaderBoard\", \"" . $range . "\", " . $game . ", \"" . $stat . "\", \"" . $rows . "\", \"" . $order . "\", \"" . $active . "\")'>Previous</button> </td>";
+        echo "<td> <button class=\"btn btn-default btn-sm pull-left prev-btn\">Previous</button> </td>";
     }
     echo "<td> Page " . $actual_page . " of " . $total_pages . "</td>";
     if ($actual_page == $total_pages) {
-        echo "<td> <button class=\"btn btn-default btn-sm pull-right\"> disabled>Next</button> </td>";
+        echo "<td> <button class=\"btn btn-default btn-sm pull-right\" disabled>Next</button> </td>";
     } else {
-        echo "<td> <button class=\"btn btn-default btn-sm pull-right\" onclick='getLeaderboard(" . ($page + 1) . ", \"#LeaderBoard\", \"" . $range . "\", " . $game . ", \"" . $stat . "\", \"" . $rows . "\", \"" . $order . "\", \"" . $active . "\")'>Next</button> </td>";
+        echo "<td> <button class=\"btn btn-default btn-sm pull-right next-btn\">Next</button> </td>";
     }
 
 } else {
