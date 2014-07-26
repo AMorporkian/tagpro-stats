@@ -371,17 +371,16 @@ if ($range != null && $stat != null) {
 
     echo "<table style='width: 100%;'><tr>";
     if ($actual_page == 1) {
-        echo "<td> <button disabled>Previous</button> </td>";
+        echo "<td> <button class=\"btn btn-default btn-sm pull-left\" disabled>Previous</button> </td>";
     } else {
-        echo "<td> <button onclick='getLeaderboard(" . ($page - 1) . ", \"#LeaderBoard\", \"" . $range . "\", " . $game . ", \"" . $stat . "\", \"" . $rows . "\", \"" . $order . "\", \"" . $active . "\")'>Previous</button> </td>";
+        echo "<td> <button class=\"btn btn-default btn-sm pull-left\" onclick='getLeaderboard(" . ($page - 1) . ", \"#LeaderBoard\", \"" . $range . "\", " . $game . ", \"" . $stat . "\", \"" . $rows . "\", \"" . $order . "\", \"" . $active . "\")'>Previous</button> </td>";
     }
     echo "<td> Page " . $actual_page . " of " . $total_pages . "</td>";
     if ($actual_page == $total_pages) {
-        echo "<td> <button disabled>Next</button> </td>";
+        echo "<td> <button class=\"btn btn-default btn-sm pull-right\"> disabled>Next</button> </td>";
     } else {
-        echo "<td> <button onclick='getLeaderboard(" . ($page + 1) . ", \"#LeaderBoard\", \"" . $range . "\", " . $game . ", \"" . $stat . "\", \"" . $rows . "\", \"" . $order . "\", \"" . $active . "\")'>Next</button> </td>";
+        echo "<td> <button class=\"btn btn-default btn-sm pull-right\" onclick='getLeaderboard(" . ($page + 1) . ", \"#LeaderBoard\", \"" . $range . "\", " . $game . ", \"" . $stat . "\", \"" . $rows . "\", \"" . $order . "\", \"" . $active . "\")'>Next</button> </td>";
     }
-    echo "<td style='text-align: right;'>*<span style='color: #00FF00;'><i>less than 50 games played</i></span></td></tr></table>";
 
 } else {
     echo "Error Getting Table. You broke it!";

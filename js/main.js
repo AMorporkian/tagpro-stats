@@ -64,8 +64,7 @@ function submitProfile() {
 
 function getLeaderboard(page, board, range, game, stat, row, order, active) {
     $(board).html("<img src='img/ajax-loader.gif'>");
-    if (document.getElementById('mltpCheck'))
-    {var mltp = document.getElementById('mltpCheck').checked;
+    var mltp = 0;
     $.ajax({
         type: "GET",
         url: 'get_table.php',
@@ -75,7 +74,7 @@ function getLeaderboard(page, board, range, game, stat, row, order, active) {
         }
     });
     window.location.hash = 'range=' + range + '&stat=' + stat + '&page=' + page + '&game=' + game + "&row=" + row + "&order=" + order + "&active=" + active;
-    }
+
 
 }
 
