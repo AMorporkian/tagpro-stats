@@ -1,11 +1,17 @@
 $.ajaxSetup({cache: false});//turn off ajax caching
 
 var currentPage = 0;
+var currentUrlHash;
 $(document).ready(function() {
     $("#refresh-btn").on("click", function() { getLeaderboard(); });
     $(".leaderboard-controls select").on("change", function() { currentPage = 0; getLeaderboard(); });
     $("#LeaderBoard").on("click", ".prev-btn", function() { currentPage--; getLeaderboard(); });
     $("#LeaderBoard").on("click", ".next-btn", function() { currentPage++; getLeaderboard(); });
+//    $("#permalink-btn").on("click", function() {
+//        $("#permalink-txt").text("http://tagpro-stats.com/" + currentUrlHash);
+//        $("#permalink-txt").attr("href", "/" + currentUrlHash);
+//        $("#permalink-txt").toggleClass("hidden");
+//    });
     parseURL();
     getUserCount();
     getStatLeaders("month", "#MonthlyStatLeaders");
@@ -106,7 +112,8 @@ function getLeaderboard() {
             $(board).html(data);
         }
     });
-    //window.location.hash = 'range=' + range + '&stat=' + stat + '&page=' + page + '&game=' + game + "&row=" + row + "&order=" + order + "&active=" + active;
+    currentUrlHash = '#range=' + range + '&stat=' + stat + '&page=' + page + '&game=' + game + "&row=" + row + "&order=" + order + "&active=" + active;
+    $("#permalink-btn").attr("href", "/" + currentUrlHash);
 }
 
 function getUserCount() {
