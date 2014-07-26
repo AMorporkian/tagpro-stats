@@ -2,6 +2,55 @@
 
 include 'config.php';
 
+function humanizeDateDifference($now, $otherDate = null, $offset = null)
+{
+    if ($otherDate != null) {
+        $offset = $now - $otherDate;
+    }
+    if ($offset != null) {
+        $deltaS = $offset % 60;
+        $offset /= 60;
+        $deltaM = $offset % 60;
+        $offset /= 60;
+        $deltaH = $offset % 24;
+        $offset /= 24;
+        $deltaD = ($offset > 1) ? ceil($offset) : $offset;
+    } else {
+        throw new Exception("Must supply otherdate or offset (from now)");
+    }
+    if ($deltaD > 1) {
+        if ($deltaD > 365) {
+            $years = ceil($deltaD / 365);
+            if ($years == 1) {
+                return "last year";
+            } else {
+                return "$years years ago";
+            }
+        }
+        if ($deltaD > 6) {
+            return date('d M', strtotime("$deltaD days ago"));
+        }
+        return "$deltaD days ago";
+    }
+    if ($deltaD == 1) {
+        return "Yesterday";
+    }
+    if ($deltaH == 1) {
+        return "last hour";
+    }
+    if ($deltaM == 1) {
+        return "last minute";
+    }
+    if ($deltaH > 0) {
+        return $deltaH . " hours ago";
+    }
+    if ($deltaM > 0) {
+        return $deltaM . " minutes ago";
+    } else {
+        return "few seconds ago";
+    }
+}
+
 if (isset($_GET['range'])) {
     $range = $_GET['range'];
 } else {
@@ -356,13 +405,11 @@ if ($range != null && $stat != null) {
 
     $rank = 1 + $start;
     echo "<table class='leaderTable table'>";
-    echo "<tr><th>Rank</th><th>Last Updated</th><th>Name</th><th>" . $stat_header . "</th>";
+    echo "<tr><th>Rank</th><th class=\"last_updated\">Updated</th><th>Name</th><th>" . $stat_header . "</th>";
     while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
         echo "<tr><td class='leaderTable'>" . $rank
-            . "</td><td class='leaderTable'>" . $row['dt_last_update']
-            . "</td><td class='leaderTable'><a href='http://tagpro-origin.koalabeast.com/profile/" . $row['vc_profile_string'] . "'>" . $row['vc_name'] . "</a>" . $row['asterisk']
-            . " <a href='profile.php?userid=" . $row['bi_user_id'] . "'>"
-            . "<img class='pull-right' src='http://tagpro-stats.com/img/blue_flag.gif' onmouseover='this.src = \"http://tagpro-stats.com/img/red_flag.gif\";' onmouseout='this.src = \"http://tagpro-stats.com/img/blue_flag.gif\";'/></a>"
+            . "</td><td class='last_updated'>" . humanizeDateDifference(time(), strtotime($row['dt_last_update']))
+            . "</td><td class='leaderTable'><a href='profile.php?userid=" . $row['bi_user_id'] . "'>" . $row['vc_name'] . "</a>" . $row['asterisk']
             . "</td><td class='leaderTable'>" . $row['stat'] . "</td></tr>";
         $rank++;
     }

@@ -52,3 +52,22 @@ h4 {
 body {
     font: 400 17px/1.6 'Droid Sans', Helvetica, Arial, sans-serif;
 }
+@media (max-width: 480px) {
+    td.last_updated {
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;
+    }
+    th.last_updated {
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;
+    }
+    body {
+        font: 400 13px/1.6 'Droid Sans', Helvetica, Arial, sans-serif;
+    }
+}
