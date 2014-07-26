@@ -4,9 +4,8 @@ var currentPage = 0;
 $(document).ready(function() {
     $("#refresh-btn").on("click", function() { getLeaderboard(); });
     $(".leaderboard-controls select").on("change", function() { currentPage = 0; getLeaderboard(); });
-    $(".next-btn").on("click", function() { currentPage++; getLeaderboard(); });
-    $(".prev-btn").on("click", function() { currentPage--; getLeaderboard(); });
-
+    $("#LeaderBoard").on("click", ".prev-btn", function() { currentPage--; getLeaderboard(); });
+    $("#LeaderBoard").on("click", ".next-btn", function() { currentPage++; getLeaderboard(); });
     parseURL();
     getUserCount();
     getStatLeaders("month", "#MonthlyStatLeaders");
